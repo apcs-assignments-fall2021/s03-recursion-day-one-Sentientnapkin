@@ -23,8 +23,11 @@ public class MyMain {
     // arithmeticSequence(4) => 9
     // arithmeticSequence(1) => 3
     public static int arithmeticSequence(int n) {
-        // YOUR CODE HERE
-        return -1;
+        if (n==1){
+            return 3;
+        }
+        else
+            return arithmeticSequence(n-1)+2;
     }
 
     // Write a method that uses recursion to count the number
@@ -36,8 +39,15 @@ public class MyMain {
     // Hint: to make the subproblem smaller, make the String shorter!
     // Hint 2: multiple recursive cases might be helpful!
     public static int countX(String str) {
-        // YOUR CODE HERE
-        return -1;
+        if(str.length()==0) {
+            return 0;
+        }
+        else if (str.charAt(0)=='x'){
+            return 1+countX(str.substring(1));
+        }
+        else{
+            return countX(str.substring(1));
+        }
     }
 
 
@@ -52,8 +62,15 @@ public class MyMain {
     // exponent(5, 2) = 5 * 5 = 25
     // exponent(4, 0) = 1
     public static int exponent(int base, int power) {
-        // YOUR CODE HERE
-        return -1;
+        if(power ==0){
+            return 1;
+        }
+        else if(power==1){
+            return base;
+        }
+        else{
+            return exponent(base,power-1)*base;
+        }
     }
 
     // Write a method that uses recursion to count the number
@@ -62,8 +79,15 @@ public class MyMain {
     // countHi("hix") => 1
     // countHi("hellohihi") => 2
     public static int countHi(String str) {
-        // YOUR CODE HERE
-        return -1;
+        if(str.length()<2){
+            return 0;
+        }
+        else if(str.substring(0,2).equals("hi")){
+            return 1+countHi(str.substring(2));
+        }
+        else{
+            return countHi(str.substring(1));
+        }
     }
 
 
